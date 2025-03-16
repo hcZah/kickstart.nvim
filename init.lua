@@ -359,7 +359,6 @@ require('lazy').setup({
               completion = {
                 callSnippet = 'Replace',
               },
-              indent = 4,
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
             },
@@ -384,6 +383,7 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'lua_ls', -- Used to format Lua code
         'stylua', -- Used to format Lua code
+        'gdscript',
         'gopls',
         'zls',
         'clangd',
@@ -636,7 +636,25 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'go', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'diff',
+        'gdscript',
+        'godot_resource',
+        'gdshader',
+        'go',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'python',
+        'zig',
+        'query',
+        'vim',
+        'vimdoc',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -675,7 +693,7 @@ require('lazy').setup({
   { import = 'custom.plugins.harpoon' },
   { import = 'custom.plugins.nvim-treesitter-context' },
   { import = 'custom.plugins.oil-nvim' },
-  --
+
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
